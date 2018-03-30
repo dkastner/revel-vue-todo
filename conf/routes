@@ -1,0 +1,11 @@
+module:testrunner
+
+GET     /api/todos                       TodosController.Index
+POST     /api/todos                      TodosController.Create
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /                                Static.serve("public", "index.html")
+GET     /*filepath                       Static.Serve("public")
